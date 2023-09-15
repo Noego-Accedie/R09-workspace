@@ -9,6 +9,7 @@ pwm.setPWMFreq(50)
 
 # Alphabot motor object
 Ab = AlphaBot2()
+Ab.allow_encoder_event()
 
 # Curses keyboard input settings
 screen = curses.initscr()
@@ -29,8 +30,9 @@ try:
             Ab.backward(40)
         elif char == ord('d'):
             Ab.right(40)
-        elif char == ord(' '):
+        elif char == ord('e'):
             Ab.stop()
+
             
 finally:
     curses.nocbreak(); screen.keypad(0); curses.echo(0); curses.endwin()
